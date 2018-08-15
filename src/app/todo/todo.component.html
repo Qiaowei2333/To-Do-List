@@ -1,0 +1,15 @@
+<div id="container">
+	<h1>To-Do List<i class="fa fa-plus"></i></h1>
+  <input
+    type="text" 
+    class="form-control" 
+    placeholder="What is your next plan?"
+    [(ngModel)]="itemName" >
+  <button class="form-control btn btn-primary" (click)="onCreateItem()">Add</button>
+  <p>{{itemName}}</p>
+
+	<ol>
+		<li *ngFor="let item of items" (click)="onDeleteItem($event)"><span><i class="fa fa-trash"></i></span>{{item.name}}</li>
+	</ol>
+</div>
+
